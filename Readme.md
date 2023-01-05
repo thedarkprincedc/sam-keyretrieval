@@ -1,4 +1,4 @@
-# SAM Keyretrieval
+# SAM Key Retrieval
 
 Sam Key Retrieval is a application designed retrieve keys from SAM.gov.
 
