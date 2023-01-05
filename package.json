@@ -1,5 +1,5 @@
 {
-  "name": "epls-keyretrieval",
+  "name": "sam-keyretrieval",
   "version": "1.0.0",
   "description": "",
   "main": "bin/index.js",
