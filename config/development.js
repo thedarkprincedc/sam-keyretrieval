@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const config = {
+    insecureRequests: false,
     chromium: {
         headless: true,
         slowMo: 0
@@ -24,5 +25,10 @@ const config = {
         }
     } 
 };
+
+if(config.insecureRequests){
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
+}
+
 
 module.exports = config;

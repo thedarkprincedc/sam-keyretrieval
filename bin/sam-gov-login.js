@@ -37,7 +37,13 @@ const config = require("config");
   await page.locator('#eye-icon-api-key-0').click()
 
   await page.waitForTimeout(config.email.waitToCheckEmail)
+  
   const emailOtp = await readEmail()
+    .catch((error) => {
+      console.log('Error: %s', error.message)
+      process.exit(0)
+    });
+  
   console.log("Email (One-Time Password): %s", emailOtp)
   
   await page.locator('#password-input').fill(emailOtp)
