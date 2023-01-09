@@ -4,12 +4,13 @@
   "description": "",
   "main": "bin/index.js",
   "bin": {
-    "epls-keyretrieval": "bin/index.js"
+    "sam-keyretrieval": "bin/sam-gov-login.js"
   },
   "scripts": {
-    "start": "node bin/index.js",
-    "start:sam": "node ./bin/sam-gov-login",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/sam-gov-login",
+    "build": "npx pkg . --compress GZip",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "npx rimraf node_modules/playwright-core/**/server/chromium/appIcon.png"
   },
   "author": "",
   "license": "ISC",
@@ -18,9 +19,17 @@
     "config": "^3.3.8",
     "dotenv": "^16.0.3",
     "enquirer": "^2.3.6",
-    "imap-simple": "^5.1.0",
     "imapflow": "^1.0.119",
     "mailparser": "^3.6.3",
     "playwright": "^1.29.1"
+  },
+  "pkg": {
+    "scripts": [
+      "/lib/**/sam-gov-login.js"
+    ],
+    "assets": [
+      "node_modules/**/*"
+    ],
+    "outputPath": "dist"
   }
 }
